@@ -4,9 +4,7 @@ import json
 import os
 import sys
 from pathlib import Path
-
-sys.path.append("./scripts/")
-from tools import getResult
+from . import tools
 
 
 def initF(request):
@@ -22,7 +20,7 @@ def solveCube(request):
     if request.POST:
         data = request.POST.getlist("state")
         data = json.loads(data[0])
-        data = getResult(data['states'])
+        data = tools.getResult(data['states'])
         # 开始调用模型
         solveMoves = []
         solveMoves_rev = []
