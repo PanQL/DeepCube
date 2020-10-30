@@ -230,8 +230,7 @@ function solveCube() {
             },
             type: 'POST',
             dataType: 'json',
-            success: function (response) {
-                solveStartState = JSON.parse(JSON.stringify(state))
+            success: function (response) { solveStartState = JSON.parse(JSON.stringify(state))
 
                 solveMoves = response["moves"]; //1
                 solveMoves_rev = response["moves_rev"]; // 2
